@@ -13,8 +13,10 @@ const img = document.querySelector(".img-container >img");
 const filters = document.querySelectorAll(".filters >ul>li>input");
 const canvas = document.querySelector("canvas");
 const canContext = canvas.getContext("2d");
+
 function restImage() {
-  img.style.filter = "";
+  canContext.filter = "none";
+  canContext.drawImage(img, 0, 0, canvas.width, canvas.height);
   saturation.value = "100";
   contrast.value = "100";
   brightness.value = "100";
